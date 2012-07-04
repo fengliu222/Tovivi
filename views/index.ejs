@@ -1,0 +1,47 @@
+
+<% function handledate(date){return date.toString().replace(/G[\x00-\xff0-9a-zA-Z\u4e00-\u9fa5]*$/," ")} %>
+ 
+<div id="main" class="container">
+	<div class="row">
+		<div id="contentbox"  class="span9">
+			<div id="content">
+				<% for(var i=0;i<content.length;i++) {%>
+				<div class="one span9">
+						<div class="page-header">
+								<h1><%= handledate(content[i].date) %> <small>To my Vivi.</small></h1>
+						</div>
+						<% if(content[i]) { %>
+					 
+							<% if(content[i].audio[0]  !== "") {%>
+								<embed src="<%= content[i].audio[0]%>" type="application/x-shockwave-flash" width="257" height="33" wmode="transparent"></embed>
+							<%}%>
+						 
+							<% if(content[i].pic[0] !== "") {%>
+								<img src="<%= content[i].pic %>" />
+							<%}%>
+
+							<% if(content[i].video[0] !== "")  {%>
+								<embed src="<%= content[i].video %>" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" allowFullScreen="true" mode="transparent" type="application/x-shockwave-flash"></embed>
+
+							<%}%>
+							
+							<h2 class="well"><%= content[i].word %> </h2>
+
+								</div>
+					<%}}%>
+				
+			</div>
+		</div>
+		<div id="aside" class="span3">
+			<h2  >日历</h2>
+			<div id="list"><ul class="unstyled">
+				<% for(var i=0;i<content.length;i++) {%>
+					<li>
+						<a href="#"> <%= content[i].date.toString().replace(/G[\x00-\xff0-9a-zA-Z\u4e00-\u9fa5]*$/," ")%></a>
+					</li> 					
+				<% } %>
+			</ul></div>
+		</div>
+	</div>
+</div>
+	 

@@ -1,0 +1,32 @@
+@titlesize:12px;
+@wordcolor:#454545;
+#main{
+	 margin-top:30px;
+}
+#aside{
+	.opacity(50);
+	.transition(all .2s);
+	
+	h2{
+		font-size: @titlesize;
+		color:@wordcolor;
+	}
+}
+#aside:hover{
+	.opacity(100);
+}
+
+#contentbox{
+	position: relative;
+	overflow: hidden;
+	#content{
+		.center-block();
+		position: relative;
+		left:0;
+		.transition(0.5s ease-in-out left);
+	}
+}
+.one{
+	float:left;
+	margin-left:0 !important;
+}
