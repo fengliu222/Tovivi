@@ -1,16 +1,26 @@
-<div id="login" class="container">
-	<div class="raw">
-		<form action="/say" method="post" class="span10">
-			<lable><input type="text" name="user[love]" /></lable>
-			<lable><input type="text" name="user[pic]" placeholder="图片URL"/></lable>
-			<lable><input type="text" name="user[video]" placeholder="视频URL"/></lable>
-			<lable><input type="text" name="user[audio]" placeholder="音频URL"/></lable>
-			<input type="submit" value="提交" />
-			<div>
-				 
-			 
-				  
-			</div>
-		</form>
+<div id="main" class="container">
+	<div class="raw-fluid">
+		<div class="span8">
+			<form action="/say" method="post" class="formdata">
+				<lable>
+					<textarea type="text" name="user[love]" placeholder="在此输入文字"/></textarea>
+					<div class="alert alert-error" id="texterror"></div>
+				</lable>
+				<lable>
+					<input type="text" name="user[pic]" placeholder="图片URL" />
+					<input type="file" name="user[pic]" />
+				</lable>
+				<lable>
+					<input type="text" name="user[video]" placeholder="视频URL"/>
+				</lable>
+				<lable>
+					<input type="text" name="user[audio]" placeholder="音频URL" />
+				</lable>
+				<input type="button" value="提交" class="btn btn-primary btn-large" onclick="formva()"/>
+
+				
+			</form>
+		</div>
+		<%- partial('aside')%>
 	</div>
 </div>

@@ -131,6 +131,33 @@ textarea {
   -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
+.listitem a {
+  float: left;
+}
+.removeicon i {
+  display: none;
+  -webkit-transition: 0.1s ease-in-out all;
+  -moz-transition: 0.1s ease-in-out all;
+  -ms-transition: 0.1s ease-in-out all;
+  -o-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+}
+.removeicon i:hover {
+  display: inline;
+}
+.formdata input[type='text'],
+.formdata textarea {
+  width: 100%;
+}
+.formdata textarea {
+  display: block;
+}
+#texterror {
+  display: none;
+}
+body {
+  background: url('./img/bac.jpg');
+}
 #main {
   margin-top: 30px;
 }

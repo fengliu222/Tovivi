@@ -1,17 +1,15 @@
 $(function(){
 	 var num = $(".one").length;
-	 var width = 700;
-	 $("#content").width(width*num);
+	 var width = 620;
+	
 
-	 (function(){
-	 	var items = $("#list ul li");
-	 	items.each(function(i){
-	 		 
-	 		$(this).click(function(){
-	 			console.log(-i*width);
-	 			$("#content").css("left",-i*width);
-	 		});
-	 	})
-	 })();
+	 /*
+		Add click event listener for homepage content items.
+	 */
+	 $("#content").width(width*num);
+	 $("#list ul").delegate("li","click",function(){
+	 		$("#content").css("left",-($(this).index())*width);
+	 });
+
+	 
 });
- 

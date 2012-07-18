@@ -9,9 +9,11 @@ exports = module.exports = {
 			res.render("index",{
 				layout:'layout.ejs',
 				title:'To My GirlFriend',
-				content:docs
+				content:docs,
+				Ptype:"index"
+				 
 			}); 
-		})
+		});
 		
 	}
 }

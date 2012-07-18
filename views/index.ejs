@@ -3,17 +3,17 @@
  
 <div id="main" class="container">
 	<div class="row">
-		<div id="contentbox"  class="span9">
+		<div id="contentbox"  class="span8">
 			<div id="content">
 				<% for(var i=0;i<content.length;i++) {%>
-				<div class="one span9">
+				<div class="one span8">
 						<div class="page-header">
 								<h1><%= handledate(content[i].date) %> <small>To my Vivi.</small></h1>
 						</div>
 						<% if(content[i]) { %>
 					 
 							<% if(content[i].audio[0]  !== "") {%>
-								<embed src="<%= content[i].audio[0]%>" type="application/x-shockwave-flash" width="257" height="33" wmode="transparent"></embed>
+								<embed src="<%= content[i].audio[0]%>" type="application/x-shockwave-flash" width="257" height="33" wmode="transparent" name="flash<%= i%>"></embed>
 							<%}%>
 						 
 							<% if(content[i].pic[0] !== "") {%>
@@ -32,16 +32,7 @@
 				
 			</div>
 		</div>
-		<div id="aside" class="span3">
-			<h2  >日历</h2>
-			<div id="list"><ul class="unstyled">
-				<% for(var i=0;i<content.length;i++) {%>
-					<li>
-						<a href="#"> <%= content[i].date.toString().replace(/G[\x00-\xff0-9a-zA-Z\u4e00-\u9fa5]*$/," ")%></a>
-					</li> 					
-				<% } %>
-			</ul></div>
-		</div>
+		<%- partial('aside')%>
 	</div>
 </div>
 	 

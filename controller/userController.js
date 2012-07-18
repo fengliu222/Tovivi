@@ -5,12 +5,15 @@ var loveModel = models.get("love");
 	
 exports = module.exports = {
 	sayView:function(req,res,next){
-
-		res.render("say",{
-			layout:"layout.ejs",
-			title:"Say love",
-			 
-		});
+		loveModel.find({}).sort("date",-1).execFind(function(err,docs){
+			res.render("say",{
+				layout:"layout.ejs",
+				title:"Say love",
+				aside:"aside.ejs",
+				content:docs,
+				Ptype:"say"
+			});
+		})
 	},
 	getlist:function(req,res,next){
 		var query = loveModel.find({});
