@@ -1,0 +1,131 @@
+body{
+	background: url("/img/bac1.jpg") center;
+}
+#main{
+	position: relative;
+	/*Close the flash*/
+	display: none;*/
+	z-index: 10;
+}
+#con{
+	
+}
+#front{
+	width: 220px;
+	margin: auto auto;
+	position: absolute;
+	left:45%;
+	top:40%;
+}
+#front img{
+	display:none;
+ 	
+}
+.row{
+	margin: 20px 0;
+}
+#contentbox{
+	 
+	overflow: hidden;
+	position: relative;
+}
+#content{
+	position: relative;
+
+	transition:left .5s ease-in-out;
+	-webkit-transition:left .5s ease-in-out;
+	-moz-transition:left .5s ease-in-out;
+	-o-transition:left .5s ease-in-out;
+}
+#content .one{
+	width: 940px;
+	margin-left:0;
+	float: left;
+
+
+}
+#aside{
+
+	display:none;
+ 	
+ 	width:100%;
+ 	background: #FCFCFC;
+ 	z-index: 20;
+ 	position: fixed;
+ 	top:80%;
+ 	left:0;
+ 	border-radius: 15px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+
+}
+#list{
+	
+}
+#list ul {
+	margin: 20px;
+}
+#list ul li a{
+	text-decoration: none;
+	color:#454545;
+}
+.timelineheader{
+	display: inline-block;
+	text-indent: 2em;
+	margin: 10px 10px 0 0;
+}
+.timelinesmall{
+	zoom:1;
+	overflow: hidden;
+	margin: 20px 0 0 0;
+}
+.clear{
+	clear: both;
+}
+.listitem{
+	width:100px;
+	height: 35px;
+	margin: 10px;
+	line-height: 35px;
+	text-align: center;
+	border: 1px dashed #f5bdce;
+	float: left;
+}
+.listitem:hover{
+	border: 1px dashed #d174bc;
+}
+
+.page-content{
+	margin: 20px 0 0 0;
+	padding: 15px;
+	background: white;
+	opacity:0.3;
+
+	transition:opacity 1s ease-in-out;
+	-webkit-transition:opacity 1s ease-in-out;
+	-moz-transition:opacity 1s ease-in-out;
+	-o-transition:opacity 1s ease-in-out;
+}
+.page-content:hover{
+	opacity:1;
+}
+.well{
+	margin: 20px 0 0 0;
+
+}
+
+.picwall{
+	margin: 20px;
+}
+#slide{
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	z-index: 0 ;
+}
+#slide img{
+	width: 1366px;
+	display: none;
+ 
+}
