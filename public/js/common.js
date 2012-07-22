@@ -1,8 +1,14 @@
+ 
 $(function(){
 	 var num = $(".one").length;
 	 var width = 940;
 	 var i=0;
 	
+	 $(".well").each(function(){
+	 	var val = $(this).html();
+	 	$(this).empty().html(val);
+
+	 })
 	
 	 /*
 		Add click event listener for homepage content items.
