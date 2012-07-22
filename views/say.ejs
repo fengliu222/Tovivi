@@ -1,10 +1,10 @@
-<div id="con" class="container_12">
-	<div class="raw">
-		<div class="grid_8">
+<div id="main" class="container">
+	<div class="raw-fluid">
+		<div class="span8">
 			<form action="/say" method="post" class="formdata">
 				<lable>
 					<textarea type="text" name="user[love]" placeholder="在此输入文字"/></textarea>
-					<div class="" id="texterror"></div>
+					<div class="alert alert-error" id="texterror"></div>
 				</lable>
 				<lable>
 					<input type="text" name="user[pic]" placeholder="图片URL" />
@@ -16,12 +16,11 @@
 				<lable>
 					<input type="text" name="user[audio]" placeholder="音频URL" />
 				</lable>
-				<input type="button" value="提交" onclick="formva()"/>
+				<input type="button" value="提交" class="btn btn-primary btn-large" onclick="formva()"/>
 
 				
 			</form>
 		</div>
-	
+		<%- partial('aside')%>
 	</div>
 </div>
-	<%- partial('aside')%>

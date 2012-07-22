@@ -1,50 +1,38 @@
 
-<div id="front">
-	<img src="img/jump1.png" class="jump1"/>	
-	<img src="img/jump2.png" class="jump2"/>
-</div>  
-<div id="slide">
-	<img src="img/slide/slide1.jpg" />
-	<img src="img/slide/slide2.jpg" />
-	<img src="img/slide/slide3.jpg" />
-	<img src="img/slide/slide4.jpg" />
-</div>
-<div id="main" class="container_12">
+<% function handledate(date){return date.toString().replace(/G[\x00-\xff0-9a-zA-Z\u4e00-\u9fa5]*$/," ")} %>
+ 
+<div id="main" class="container">
 	<div class="row">
-		<div id="contentbox"  class="grid_12">
+		<div id="contentbox"  class="span8">
 			<div id="content">
 				<% for(var i=0;i<content.length;i++) {%>
-				<div class="one">
+				<div class="one span8">
 						<div class="page-header">
-								<h1><%= content[i].date.getMonth()+1%>月<%= content[i].date.getDate()%>日 <small>To my Vivi.</small></h1>
+								<h1><%= handledate(content[i].date) %> <small>To my Vivi.</small></h1>
 						</div>
-						<div class="page-content">
-							<% if(content[i]) { %>
+						<% if(content[i]) { %>
+					 
+							<% if(content[i].audio[0]  !== "") {%>
+								<embed src="<%= content[i].audio[0]%>" type="application/x-shockwave-flash" width="257" height="33" wmode="transparent" name="flash<%= i%>"></embed>
+							<%}%>
 						 
-								<% if(content[i].audio[0]  !== "") {%>
-									<embed src="<%= content[i].audio[0]%>" type="application/x-shockwave-flash" width="257" height="33" wmode="transparent" name="flash<%= i%>"></embed>
-								<%}%>
-							 
-								<% if(content[i].pic[0] !== "") {%>
-									<img src="<%= content[i].pic %>" class="picwall grid_5" />
-								<%}%>
+							<% if(content[i].pic[0] !== "") {%>
+								<img src="<%= content[i].pic %>" />
+							<%}%>
 
-								<% if(content[i].video[0] !== "")  {%>
-									<embed src="<%= content[i].video %>" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" allowFullScreen="true" mode="transparent" type="application/x-shockwave-flash"></embed>
+							<% if(content[i].video[0] !== "")  {%>
+								<embed src="<%= content[i].video %>" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" allowFullScreen="true" mode="transparent" type="application/x-shockwave-flash"></embed>
 
-								<%}%>
-								
-								<p class="well">
-									<%= content[i].word %> 
-								</p>
-								<div class="clear"></div>
-						</div>
-					</div>		
+							<%}%>
+							
+							<h2 class="well"><%= content[i].word %> </h2>
+
+								</div>
 					<%}}%>
-			
+				
 			</div>
 		</div>
-		
+		<%- partial('aside')%>
 	</div>
 </div>
-<%- partial('aside')%>
+	 

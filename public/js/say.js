@@ -1,12 +1,8 @@
-var formva = {};
-var removelog = {};
- 
 $(function($){
-	
 	 /*
 		Form validator
 	*/
- 	formva = function(){
+ 	(function(){
 	 	var text = $(".formdata");
 	 	if($(".formdata textarea").val() !== ""){
 	 		text.submit();
@@ -14,14 +10,9 @@ $(function($){
 	 	else{
 	 		$("#texterror").show().append("文字部分不能为空！")
 	 	}
-	 };
+	 })();
 
-	 removelog = function(a){
-	 
-	 	$.post("/removelog",{d:a},function(data){
-	 		console.log(data);
-	 	})
-	 }
-
- 
+	 $(".listitem .removeicon").bind("click",function(e){
+	 	
+	 })
 })

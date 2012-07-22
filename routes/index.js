@@ -11,5 +11,4 @@ exports = module.exports =function(app){
 	//app.post('/user',userController.console,commonController.index);
 	app.get('/say',userController.sayView);
 	app.post('/say',userController.subLove);
-	app.post('/removelog',userController.removelog);
 }

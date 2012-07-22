@@ -12,6 +12,16 @@ var express = require('express')
 
 var app = module.exports = express.createServer();
 
+// Configuration
+express.compiler.compilers.less.compile = function (str, fn) {
+    if (!less) less = require("less");                                                      
+    try {
+        less.render(str, { compress : true }, fn);
+    } catch (err) {
+        fn(err);
+    }
+};
+
 app.configure(function(){
   app.set('views', __dirname + '/views');
   app.set('view engine', 'ejs');
@@ -23,8 +33,8 @@ app.configure(function(){
 });
 
 app.configure('development', function(){
-
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+  lessc( __dirname + '/public' + "/less/bootstrap.less",  __dirname + '/public' + "/css");
   app.use(express.errorHandler());
 
   mongoose.connect('mongodb://localhost/moejser');

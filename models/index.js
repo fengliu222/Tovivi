@@ -1,9 +1,7 @@
-
 var mongoose = require('mongoose');
-var moment = require('moment');
 var Schema = mongoose.Schema;
 var ObjectId = Schema.ObjectId;
-var date = new Date();
+
 var love = new Schema();
 love.add({
 
@@ -13,10 +11,11 @@ love.add({
 	video:[String],
 	date:{
 		type:Date,
-		default:date.toUTCString()
+		default:Date.now
 	},
 	owner:ObjectId
 });
+
 mongoose.model('love',love);
 
 

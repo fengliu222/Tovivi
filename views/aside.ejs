@@ -1,18 +1,17 @@
-<div id="aside" class="">
-	<h2 class="timelineheader">TIME LINE</h2><small class="timelinesmall">每天爱你一点点</small>
-	<div class="clear"></div>
+<div id="aside" class="span3 well">
+	<h2 class="nav-header">日历</h2>
 	<div id="list" class="sidebar-nav">
-		<ul class="nav">
+		<ul class="unstyled nav nav-list">
 			<% for(var i=0;i<content.length;i++) {%>
 				<li class="listitem">
-					<a href="javascript:void(0)"><%= content[i].date.getMonth()+1%>月<%= content[i].date.getDate()%>日</a>
-					<% if(Ptype=="say") {%>
-						<a href='#' class='removelog' onclick="removelog('<%= content[i].date.toUTCString() %>')">删</a>
-						
-					<%}%>
-					
-				</li> 			
+					<a href="javascript:void(0)"> <%= content[i].date.toString().replace(/G[\x00-\xff0-9a-zA-Z\u4e00-\u9fa5]*$/," ")%>
 
+					<% if(Ptype=="say") {%>
+						<span class="removeicon"><i class="icon-remove"></i></span>
+					<%}%>
+					</a>
+					
+				</li> 					
 			<% } %>
 		</ul>
 	</div>

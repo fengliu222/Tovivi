@@ -6,7 +6,6 @@ var loveModel = models.get("love");
 exports = module.exports = {
 	sayView:function(req,res,next){
 		loveModel.find({}).sort("date",-1).execFind(function(err,docs){
-			console.log(docs)
 			res.render("say",{
 				layout:"layout.ejs",
 				title:"Say love",
@@ -14,9 +13,7 @@ exports = module.exports = {
 				content:docs,
 				Ptype:"say"
 			});
-
 		})
-
 	},
 	getlist:function(req,res,next){
 		var query = loveModel.find({});
@@ -34,6 +31,7 @@ exports = module.exports = {
 			pic = data.pic? data.pic : "",
 			video = data.video? data.video : "";
 
+			console.log(pic);
 		var post = new loveModel({
 			word:love,
 			audio:music,
@@ -41,26 +39,9 @@ exports = module.exports = {
 			video:video
 		});
 		post.save(function(err){
-		 	loveModel.find({}).sort("date",-1).execFind(function(err,docs){
-			console.log(docs)
-			res.render("say",{
-				layout:"layout.ejs",
-				title:"Say love",
-				aside:"aside.ejs",
-				content:docs,
-				Ptype:"say"
-			});
-
-		})
+		 	res.end();
 		});
 
-	},
-	removelog:function(req,res,next){
-		var da = req.body.d;
-	 
- 		loveModel.remove({date:da},function(err,docs){
- 			res.send(docs);
- 		})
-		// loveModel.remove({'date':d}).run();
 	}
+
 }
